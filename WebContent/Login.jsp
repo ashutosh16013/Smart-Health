@@ -38,12 +38,14 @@ Login Form
 		</div>
 		<%
 			PrintWriter pw1 = response.getWriter();
-			String msg1 = (String)request.getAttribute("error_msg");
-			 if(msg !=null)
-			 {
-				 pw1.write("<script>");
-				 pw1.write("alert("+msg+")");
-				 pw1.write("</script>");
+			String msg1 = (String)session.getAttribute("error_msg");
+			 if(msg1 !=null)
+			 {%>
+			 
+				 <script type="text/javascript">
+				 	alert(<%=msg1%>);
+				 </script>
+		    <% 
 			 }%>
 		
 </body>	

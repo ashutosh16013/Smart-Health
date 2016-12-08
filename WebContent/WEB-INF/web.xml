@@ -1,13 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID" version="2.4">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID" version="2.4">
   <display-name>retyrt</display-name>
   <servlet>
     <servlet-name>Login_servlet</servlet-name>
     <servlet-class>com.smarthealth.controller.Login_servlet</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>URL_for_image3</servlet-name>
+    <servlet-class>com.smarthealth.controller.URL_for_image3</servlet-class>
+  </servlet>
+   <servlet>
+    <servlet-name>URL_for_image2</servlet-name>
+    <servlet-class>com.smarthealth.controller.URL_for_image2</servlet-class>
+  </servlet>
+   <servlet>
+    <servlet-name>URL_for_image1</servlet-name>
+    <servlet-class>com.smarthealth.controller.URL_for_image1</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>View_Data_Friend</servlet-name>
+    <servlet-class>com.smarthealth.controller.View_Data_Friend</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>InsertQualification</servlet-name>
+    <servlet-class>com.smarthealth.controller.InsertQualification</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>InsertDatum</servlet-name>
+    <servlet-class>com.smarthealth.controller.InsertDatum</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Rate_Post</servlet-name>
+    <servlet-class>com.smarthealth.controller.Rate_Post</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>AcceptServlet</servlet-name>
     <servlet-class>com.smarthealth.controller.AcceptServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PostonForum</servlet-name>
+    <servlet-class>com.smarthealth.controller.PostonForum</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>RejectServlet</servlet-name>
@@ -16,6 +48,10 @@
   <servlet>
     <servlet-name>FriendRequest</servlet-name>
     <servlet-class>com.smarthealth.controller.FriendRequest</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CommentonPost</servlet-name>
+    <servlet-class>com.smarthealth.controller.CommentonPost</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>View_requests</servlet-name>
@@ -29,6 +65,14 @@
     <servlet-name>Logout</servlet-name>
     <servlet-class>com.smarthealth.controller.Logout</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>DeleteForum</servlet-name>
+    <servlet-class>com.smarthealth.controller.DeleteForum</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteForum</servlet-name>
+    <url-pattern>/DeleteForum</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Login_servlet</servlet-name>
     <url-pattern>/Login_servlet</url-pattern>
@@ -46,6 +90,10 @@
     <url-pattern>/AcceptServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+    <servlet-name>CommentonPost</servlet-name>
+    <url-pattern>/CommentonPost</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
     <servlet-name>RejectServlet</servlet-name>
     <url-pattern>/RejectServlet</url-pattern>
   </servlet-mapping>
@@ -56,6 +104,38 @@
   <servlet-mapping>
     <servlet-name>Logout</servlet-name>
     <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PostonForum</servlet-name>
+    <url-pattern>/PostonForum</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InsertDatum</servlet-name>
+    <url-pattern>/InsertDatum</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Rate_Post</servlet-name>
+    <url-pattern>/Rate_Post</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InsertQualification</servlet-name>
+    <url-pattern>/InsertQualification</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>View_Data_Friend</servlet-name>
+    <url-pattern>/View_Data_Friend</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>URL_for_image3</servlet-name>
+    <url-pattern>/URL_for_image3</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>URL_for_image2</servlet-name>
+    <url-pattern>/URL_for_image2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>URL_for_image1</servlet-name>
+    <url-pattern>/URL_for_image1</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>Home.jsp</welcome-file>

@@ -19,6 +19,11 @@
 
 Login lg=new Login();
 List<String> detail_user=(List<String>)session.getAttribute("uname");
+if(session.getAttribute("uname")==null){
+	System.out.println("Hello world");
+	response.sendRedirect("error.html");
+	return;
+}
 List<String> display_requests=lg.check_requests(detail_user.get(1));
 %>
 
@@ -49,12 +54,14 @@ List<String> display_requests=lg.check_requests(detail_user.get(1));
 				role="navigation">
 
 				<ul class="nav nav-sidebar">
-					<li><a href="#">User</a></li>
+					<li><a href="User.jsp">User</a></li>
 					<li><a href="view_profile.jsp">View Profile</a></li>
-					<li><a href="view_profile.jsp" target="_ext">Edit Profile</a></li>
+					<li><a href="view_profile.jsp">Edit Profile</a></li>
 					<li><a href="view_friends.jsp">View Friends</a></li>
 					<li><a href="view_users_to_send.jsp">Send Requests</a></li>
 					<li class="active"><a href="accept_reject.jsp">View Requests</a></li>
+					<li><a href="ViewForumPosts.jsp">View Forums</a></li>
+					<li><a href="view_health_data.jsp">View Health Data</a></li>
 				</ul>
 
 			</div>
@@ -70,7 +77,7 @@ List<String> display_requests=lg.check_requests(detail_user.get(1));
 					</button>
 				</p>
 
-				<h1 class="page-header">Your current friends</h1>
+				<h1 class="page-header">Your current friend requests</h1>
 
 				<hr>
 				<div class = "row">
@@ -97,9 +104,9 @@ List<String> display_requests=lg.check_requests(detail_user.get(1));
 						<div class = "row">
 						<div class="col-md-3"><p><%=i+1 %></p></div>
 						<div class="col-md-3"><p name="<%=friend_id+(i+1)+""%>" value = "<%=name %>"><%=name %></p></div>
-						<div class="col-md-3"><center><p><button class="btn btn-green" type="submit"
+						<div class="col-md-3"><center><p><button class="btn btn-success" type="submit"
 								name="<%=btn_acc+(i+1)+""%>" value = "<%=name %>" onclick="form.action='AcceptServlet';">Accept Request</button></p></center></div>
-						<div class="col-md-3"><center><p><button class="btn btn-red" type="submit"
+						<div class="col-md-3"><center><p><button class="btn btn-danger" type="submit"
 								name="<%=btn_rej+(i+1)+""%>" value = "<%=name %>" onclick="form.action='RejectServlet';">Reject Request</button></p></center></div>
 						</div>
 					<%

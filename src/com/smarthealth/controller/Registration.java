@@ -1,8 +1,6 @@
 package com.smarthealth.controller;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -68,28 +66,22 @@ public class Registration implements For_registration{
 	}
 	
 	//Function to add extra parameters of Moderator
-	public void add_Moderator(String uname) throws SQLException, NumberFormatException, 
+	public void add_Moderator(String uname, String phone) throws SQLException, NumberFormatException, 
 	IOException{
 		
 		CallableStatement stmt = DBConnection.getConnection().prepareCall("{call add_moderator(?,?)}");
 		stmt.setString(1,uname);
-		System.out.println("Enter phone number");
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String num = br.readLine();
-		stmt.setString(2, num);
+		stmt.setString(2, phone);
 		stmt.execute();
 	}
 	
 	//Function to add extra parameters of Admin
-	public void add_Admin(String uname)throws SQLException, NumberFormatException, 
+	public void add_Admin(String uname, String phone)throws SQLException, NumberFormatException, 
 	IOException{
 
 		CallableStatement stmt = DBConnection.getConnection().prepareCall("{call add_Admin(?,?)}");
 		stmt.setString(1,uname);
-		System.out.println("Enter phone number");
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String num = br.readLine();
-		stmt.setString(2, num);
+		stmt.setString(2, phone);
 		stmt.execute();
 	}
 	
@@ -125,6 +117,18 @@ public class Registration implements For_registration{
 		}
 		else
 			return 1;
+		
+	}
+
+	@Override
+	public void add_Moderator(String uname) throws SQLException, NumberFormatException, IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void add_Admin(String uname) throws SQLException, NumberFormatException, IOException {
+		// TODO Auto-generated method stub
 		
 	}
 	

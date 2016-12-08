@@ -18,5 +18,11 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/Users/welcome/Desktop/mockito-all-1.9.5.jar"/>
+	<classpathentry kind="lib" path="ext_libs/commons-lang3-3.5.jar"/>
+	<classpathentry kind="lib" path="ext_libs/j2ee.jar"/>
+	<classpathentry kind="lib" path="ext_libs/org.apache.commons.io.jar"/>
+	<classpathentry kind="lib" path="ext_libs/org.apache.commons.fileupload.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

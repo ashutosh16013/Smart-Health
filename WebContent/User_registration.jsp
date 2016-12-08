@@ -5,9 +5,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 <title>User_Registration</title>
 </head>
 <body>
@@ -148,7 +148,7 @@ String msg = (String)request.getAttribute("Msg");
 </div>
 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="name">Postal Area</label>  
+  <label  class="col-md-4 control-label" for="name">Postal Area</label>  
   <div class="col-md-4">
   <input id="name" name="pos_area" type="text" placeholder="Enter your name" class="form-control input-md" required="">
     
@@ -159,13 +159,51 @@ String msg = (String)request.getAttribute("Msg");
 <div class="form-group">
   <label class="col-md-4 control-label" for="user_type">User Type</label>
   <div class="col-md-4">
-    <select id="user_type" name="user_type" class="form-control">
+ 
+    <select id="user_type" name="user_type" class="form-control" onChange="changetextbox(this)" >
       <option value="1">End User</option>
       <option value="2">Moderator</option>
       <option value="3">Admin</option>
     </select>
+     
+    
   </div>
 </div>
+<div class="form-group" >
+  <label class="col-md-4 control-label" for="name">Mobile Number</label>  
+  <div class="col-md-4">
+  <input disabled="disabled"  id="mobile_no" name="mobile_no" type="phone"  placeholder="Enter your mobile number" class="form-control input-md" >
+    
+  </div>
+</div>
+<!--<div class="form-group" >
+  <label class="col-md-4 control-label" for="name">Qualification</label>  
+  <div class="col-md-4">
+  <input disabled="disabled"  id="qualification" name="qualification" type="text"  placeholder="Enter your qualification" class="form-control input-md" >
+    
+  </div>
+</div>-->
+<script type="text/javascript">
+function changetextbox(select)
+{
+	var selectedOption = select.options[select.selectedIndex];
+   // alert ("The selected option is " + selectedOption.value);
+    if(selectedOption.value==="1"){
+    //	alert ("hjhvddlgkldff" );
+    	
+    	document.getElementById("mobile_no").disabled=true; }
+    else 
+    	document.getElementById("mobile_no").disabled=false;
+    //if(selectedOption.value==="2"){
+        //	alert ("hjhvddlgkldff" );
+        	
+        	//document.getElementById("qualification").disabled=false; }
+        //else 
+        	//document.getElementById("qualification").disabled=true;
+
+
+}
+</script>
 
 <!-- Button -->
 <div class="form-group">

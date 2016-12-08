@@ -19,10 +19,10 @@
 Login obj1 = new Login();
 Registration obj = new Registration();
 
-	obj1.update(userinfo.getUname(), userinfo.getEmail1(),userinfo.getEmail2(), userinfo.getFirst_name(), userinfo.getLast_name(), userinfo.getAbout_me(), userinfo.getPic_1(), 
+	obj1.update(userinfo.getUname(), userinfo.getPass(), userinfo.getEmail1(),userinfo.getEmail2(), userinfo.getFirst_name(), userinfo.getLast_name(), userinfo.getAbout_me(), userinfo.getPic_1(), 
 			userinfo.getPic_2(), userinfo.getPic_3(), userinfo.getStreet_num(), userinfo.getStreet_name(), userinfo.getMun_party(), userinfo.getGov_dist(), userinfo.getPos_area()); 
 	
-	RequestDispatcher rd=request.getRequestDispatcher("Home.jsp");
+	RequestDispatcher rd=request.getRequestDispatcher("User.jsp");
 	rd.forward(request, response);
 	
 

@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Post {
+/*public class Post {
 	
 		public void post_option_for_user(Login obj_login, int forum_id) throws SQLException, NumberFormatException, IOException{
 			
@@ -20,7 +20,7 @@ public class Post {
 			switch(op_for_post)
 			{
 			case 1:
-				rs = obj_login.list_all_post(forum_id);
+				//rs = obj_login.list_all_post(forum_id);
 				int index=0;
 				rs.last(); 
 				int total = rs.getRow();
@@ -49,11 +49,11 @@ public class Post {
 						String link = br.readLine();
 						System.out.println("Enter your VideoURL");
 						String video = br.readLine();
-						int result = obj_login.insert_comment(user,timestamp,text,photo,link,video);
-						if(result == 1)
-							System.out.println("Successfully Commented");
-						else
-							System.out.println("Can't comment. Please try again");
+						//int result = obj_login.insert_comment(user,timestamp,text,photo,link,video);
+						//if(result == 1)
+							//System.out.println("Successfully Commented");
+						///else
+							//System.out.println("Can't comment. Please try again");
 					}
 					else
 						System.out.println("You didnt enter a valid index");
@@ -74,21 +74,21 @@ public class Post {
 				String link1 = br.readLine();
 				System.out.println("Please Enter Some Video location");
 				String video1 = br.readLine();
-				int res = obj_login.add_new_post(forum_id,post,photo1,link1,video1);
-				if(res==1)
-					System.out.println("Successfully added your post");
-				else
-					System.out.println("Can't add. Please try again");
+				//int res = obj_login.add_new_post(forum_id,post,photo1,link1,video1);
+				//if(res==1)
+				//	System.out.println("Successfully added your post");
+				//else
+					//System.out.println("Can't add. Please try again");
 				break;
 				
 				//Case for rating a post
 			case 3:
-				rs = obj_login.list_all_post(forum_id);
+				//rs = obj_login.list_all_post(forum_id);
 				int index1=0;
-				rs.last(); 
-				int total1 = rs.getRow();
-				rs.beforeFirst();
-				if(total1>0)
+				//rs.last(); 
+				//int total1 = rs.getRow();
+				//rs.beforeFirst();
+				//if(total1>0)
 				{
 					while(rs.next())
 					{
@@ -124,10 +124,10 @@ public class Post {
 					
 				}
 				
-				else
+				//else
 					System.out.println("No posts exist");
 				break;
 			}
 		}
 
-}
+}*/

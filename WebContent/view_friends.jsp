@@ -19,6 +19,11 @@
 
 Login lg=new Login();
 List<String> detail_user=(List<String>)session.getAttribute("uname");
+if(session.getAttribute("uname")==null){
+	System.out.println("Hello world");
+	response.sendRedirect("error.html");
+	return;
+}
 List<String> list_of_friends=lg.view_friends(detail_user.get(1));
 %>
 
@@ -49,13 +54,16 @@ List<String> list_of_friends=lg.view_friends(detail_user.get(1));
 				role="navigation">
 
 				<ul class="nav nav-sidebar">
-					<li><a href="#">User</a></li>
+					<li><a href="User.jsp">User</a></li>
 					<li><a href="view_profile.jsp">View Profile</a></li>
-					<li><a href="view_profile.jsp" target="_ext">Edit Profile</a></li>
+					<li><a href="view_profile.jsp">Edit Profile</a></li>
 					<li class="active"><a href="view_friends.jsp">View Friends</a></li>
 					<li><a href="view_users_to_send.jsp">Send Requests</a></li>
 					<li><a href="accept_reject.jsp">View Requests</a></li>
+					<li><a href="ViewForumPosts.jsp">View Forums</a></li>
+					<li><a href="view_health_data.jsp">View Health Data</a></li>
 				</ul>
+
 
 
 			</div>
@@ -96,7 +104,7 @@ List<String> list_of_friends=lg.view_friends(detail_user.get(1));
 						<div class = "row">
 						<div class="col-md-4"><p><%=i+1 %></p></div>
 						<div class="col-md-4"><p name="<%=friend_id+(i+1)+""%>" value = "<%=name %>"><%=name %></p></div>
-						<div class="col-md-4"><p><button class="btn btn-default" type="submit"
+						<div class="col-md-4"><p><button class="btn btn-danger" type="submit"
 								name="<%=btn_id+(i+1)+""%>" value = "<%=name %>">Unfriend</button></p></div>
 						</div>
 					<%

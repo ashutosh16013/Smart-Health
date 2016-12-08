@@ -69,6 +69,7 @@ public class AcceptServlet extends HttpServlet {
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
+			response.sendRedirect("error.html");
 		}
 		
 		

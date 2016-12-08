@@ -116,10 +116,17 @@
                     <hr>
                     <img class="img-responsive img-border img-left" src="img/pic1.jpg" alt="">
                     <hr class="visible-xs">
-                    <p>The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.</p>
-                    <p>A huge thanks to <a href="http://join.deathtothestockphoto.com/" target="_blank">Death to the Stock Photo</a> for allowing us to use the beautiful photos that make this template really come to life. When using this template, make sure your photos are decent. Also make sure that the file size on your photos is kept to a minumum to keep load times to a minimum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                </div>
+                    <p>Smart Health is a healthcare-related online portal that allow patients to interact and 
+                    communicate with their healthcare providers, such as physicians and hospitals. </p>
+                    <p>Typically, 
+                    portal services are available on the Internet at all hours of the day and night. 
+                    Some patient portal applications exist as stand-alone web sites and sell their services to 
+                    healthcare providers. 
+                    </p>
+                    <p>Other portal applications are integrated into the existing web site of a 
+                    healthcare provider. Still others are modules added onto an existing electronic medical record 
+                    (EMR) system</p>
+                 </div>
             </div>
         </div>
 
@@ -145,7 +152,7 @@
     <!-- Script to Activate the Carousel -->
     <script>
     $('.carousel').carousel({
-        interval: 5000 //changes the speed
+        interval: 4000 //changes the speed
     })
     </script>
 

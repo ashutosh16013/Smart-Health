@@ -7,28 +7,44 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 <title>User_Registration</title>
 </head>
 <body>
+<%
+Login lg=new Login();
+List<String> lst2=(List<String>)session.getAttribute("uname");
+if(session.getAttribute("uname")==null){
+	System.out.println("Hello world");
+	response.sendRedirect("error.html");
+	return;
+}
+String k = (lst2.get(1));
+int uid = Integer.parseInt(lst2.get(0));
+List<String> lst3=lg.user_details_print(k ,uid);
+
+%>
 
 <form class="form-horizontal" action = "send_for_update.jsp">
 <fieldset>
 
 <!-- Form Name -->
 <center><span style="color:blue;font-size:20px">View and Edit your details</span></center>
+<%
+String href="";
+if(uid == 1)
+	href="User.jsp";
+else if(uid==2)
+	href="Moderator.jsp";
+else
+	href="Admin.jsp";
+%>
+<center><span style="color:blue;font-size:20px"><a href = <%=href %>>Return to Home</a></span></center>
 <br />
 
-<%
-Login lg=new Login();
-List<String> lst2=(List<String>)session.getAttribute("uname");
-String k = (lst2.get(1));
-int uid = Integer.parseInt(lst2.get(0));
-List<String> lst3=lg.user_details_print(k ,uid);
 
-%>
 
 
 <!-- Text input-->
@@ -43,7 +59,7 @@ List<String> lst3=lg.user_details_print(k ,uid);
 <div class="form-group">
   <label class="col-md-4 control-label" for="password">Password</label>
   <div class="col-md-4">
-    <input id="password" name="pass" type="password" placeholder="Enter a password" class="form-control input-md" required="">
+    <input id="password" name="pass" type="password" placeholder="Enter a password" class="form-control input-md" required="" value= "<%=lst3.get(14)%>">
     
   </div>
 </div>
@@ -155,14 +171,22 @@ List<String> lst3=lg.user_details_print(k ,uid);
 </div>
 
 <!-- Select Basic -->
-<div class="form-group" >
-  <label class="col-md-4 control-label" for="user_type">User Type</label>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="name">User Type</label>  
   <div class="col-md-4">
-    <select id="user_type" name="user_type" class="form-control" disabled = "true">
-      <option value="1">End User</option>
-      <option value="2">Moderator</option>
-      <option value="3">Admin</option>
-    </select>
+  <%
+  String type="";
+  if(uid==1)
+  {
+	  type = "End User";
+  }
+  else if(uid == 2)
+	  type = "Moderator";
+  else
+	  type = "Admin";
+  %>
+  <input id="name" name="pos_area" type="text" placeholder="Enter your name" class="form-control input-md" required="" value= "<%=type%>" readonly>
+    
   </div>
 </div>
 

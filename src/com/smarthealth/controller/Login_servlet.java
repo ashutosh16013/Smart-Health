@@ -63,9 +63,9 @@ public class Login_servlet extends HttpServlet {
 			List<String> result;
 			try {
 				result = obj.login_into(mail, pass);
+				HttpSession session = request.getSession();
 				if(Integer.parseInt(result.get(0))==1)
 				{
-					HttpSession session = request.getSession();
 					session.setAttribute("uname",result);
 					//response.sendRedirect("User.jsp");
 					pw.print("<h1>hello</h1>"+result+"<br/><a>click</a>");
@@ -73,20 +73,40 @@ public class Login_servlet extends HttpServlet {
 					rd.forward(request, response);
 					//response.sendRedirect("User.jsp");
 				}
+				else if(Integer.parseInt(result.get(0))==2)
+				{
+					session.setAttribute("uname",result);
+					//response.sendRedirect("User.jsp");
+					pw.print("<h1>hello</h1>"+result+"<br/><a>click</a>");
+					RequestDispatcher rd=request.getRequestDispatcher("Moderator.jsp");
+					rd.forward(request, response);
+					//response.sendRedirect("User.jsp");
+				}
+				else if(Integer.parseInt(result.get(0))==3)
+				{
+					session.setAttribute("uname",result);
+					//response.sendRedirect("User.jsp");
+					pw.print("<h1>hello</h1>"+result+"<br/><a>click</a>");
+					RequestDispatcher rd=request.getRequestDispatcher("Admin.jsp");
+					rd.forward(request, response);
+					//response.sendRedirect("User.jsp");
+				}
 				else
 				{
 					System.out.println("inv");
-					request.setAttribute("error_msg", "Invalid Credentials. Try again");
+					session.setAttribute("error_msg", "Invalid credentials. Please try again");
 					RequestDispatcher rd=request.getRequestDispatcher("Login.jsp");
 					rd.forward(request, response);
 				}
 					
 			} catch (NumberFormatException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				response.sendRedirect("error.html");
+				//e.printStackTrace();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				response.sendRedirect("error.html");
+				//e.printStackTrace();
 			}
 	}
 

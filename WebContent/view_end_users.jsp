@@ -12,6 +12,11 @@
 <%
 Login lg=new Login();
 List<String> lst2=(List<String>)session.getAttribute("uname");
+if(session.getAttribute("uname")==null){
+	System.out.println("Hello world");
+	response.sendRedirect("error.html");
+	return;
+}
 String k = (lst2.get(1));
 List<String> lst3=lg.display_end_users(lst2.get(1));
  
